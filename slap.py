@@ -29,7 +29,7 @@ def slap_cb(word, word_eol, userdata):
         nick = word[1]
         p = wikipedia.page('List_of_aquarium_fish_by_scientific_name')
         fishpix = choice(p.links)
-        hexchat.command('me ' + choice(slaps).format(nick,fishpix) + ' https://en.wikipedia.org/wiki/' + fishpix.replace(" ", "_"))
+        hexchat.command('me ' + choice(slaps).format(nick,fishpix.lower()) + ' https://en.wikipedia.org/wiki/' + fishpix.replace(" ", "_"))
     else:
         hexchat.command('help slap')
     return hexchat.EAT_ALL
